@@ -1,0 +1,87 @@
+CSS:
+------
+CSS stands for cascading style sheet. It is used to beautify the html pages.
+
+
+
+Basic CSS commands:
+======================
+
+htmltag {
+   property:value;
+}
+
+Eg:
+
+body {
+  background:red;
+  font-family: arial;
+}
+
+h1,h2,p {
+  color:red
+}
+
+div.row{
+   float:left     => it will automatically adjust when user resize the browser.
+}
+
+
+Attach style CSS to HTML:
+==============================
+1. In Head tag with css coding:
+<head>
+    <title> my title </title>
+    <style type ="text/css">
+        body {
+           background:red;
+        }
+    </style>
+</head>
+
+2. Link CSS file in HTML page:
+<head>
+    <title> my title </title>
+    <link href="test.css"  rel="stylesheet" type="text/css"/>
+</head>
+
+
+
+Class:
+=========
+
+p {
+   background:red;
+}
+
+=> above css will apply all the paragraph tag with red. If you want to exclude specific paragraph, then use class
+
+<p class="secondary"> this is test </p>
+
+.secondary{
+    background:grey;
+}
+
+So, all <p> tag will be in red and if any <p> tag with class="secondary" it will be in grey.
+The same class can be added to any tags in html.
+
+Hierarchy:
+Id => Class => htmltag
+
+
+Multi-level tag:
+==================
+
+<header>
+   <nav>
+      <ul>
+         <li> test</li>
+      </ul>
+   </nav>
+</header>
+
+If you want to apply style only to above list and not to all the list present in the web page, use the following css syntax:
+
+nav ul p {
+   background:red;
+}

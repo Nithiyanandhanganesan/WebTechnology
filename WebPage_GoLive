@@ -1,0 +1,16 @@
+Steps:
+=============
+
+1. Get a domain.  $12/year
+1.1 get a webhost $5/month
+
+hostgator.com [ vendor]
+After registering in hostgator, will get username, domain, server ip.
+
+2. Upload your files
+Using cyberduck, upload your files to the server ip given by hostgator using FTP.
+Paste all your files under www folder.
+Any change in the code, test locally and move the updated code to the server.
+
+
+3. Website is live.

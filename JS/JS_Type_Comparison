@@ -1,0 +1,52 @@
+Polymer:
+=============
+Polymer is a new open source library made for using Web Components to build web applications.
+It is similar to React in that it is a library and not a complete framework.
+It approximates features like the Shadow DOM, Templates, and HTML imports via JavaScript libraries called polyfills so that you can start
+building custom elements today that will be forward compatible with Web Components in the future.
+As of version 10, Polymer has the following element lines:
+
+- Google Web Components: Wrappers for Google’s extensive suite of apps, APIs, and services (i.e., Google Maps, YouTube, and Google Analytics)
+- App Elements: Elements for building full web apps out of custom modular elements (i.e., app routing and storage)
+- Iron Elements: Elements for building the core functionality and structural layout of a web app
+- Paper Elements: Visual elements that build off of the support provided by iron elements and implement Google’s Responsive Material Design paradigm
+- Gold Elements: Elements for adding e-commerce functionality to your website (i.e., checkout flows)
+- Neon Elements: Elements for adding special effects (i.e., animations)
+- Platinum Elements: Elements for more complex features like Bluetooth and push notifications
+- Molecules: Wrappers for external JavaScript lib
+
+
+Bootstrap:
+==============
+Bootstrap started at Twitter as an internal style guide. It is designed to get developers on pace with their new website as quickly
+and efficiently as possible. Here are some features provided by Bootstrap:
+
+- Open-sourced full (HTML, CSS, and JavaScript) front-end framework
+- CSS preprocessor: Sass (support for the Less preprocessor ended with Bootstrap 3)
+- 12-column grid system
+- “Mobile-first” responsive design
+- Optional Flexible Box (or, flexbox) support, a CSS3 mode that arranges elements on a page dynamically so they stack or expand when viewed
+  on different screen sizes
+- ES6 JavaScript components and plugins
+- Support for IE9+ (support for IE8 ended with Bootstrap 3)
+- Pre-styled, ready-to-use UI components
+
+
+Angular:
+===============
+Angular is an in-depth, comprehensive framework developed by Google that will give you everything you need to set up the front end side of a website.
+Angular manipulates DOM by extending HTML with directives. Anything that changes in the view also changes in the data, thanks to the two-way data binding.
+
+- Dependency injection
+- Two-way data binding
+- A solid templating engine
+- On-board form validation
+- Angular directives
+
+React:
+===============
+
+Let's call React what it is: an open-source library for rendering views with JavaScript. It stores two copies of a virtual DOM, including a second
+updated version that reflects changes fed in from the view. React is best when the developer has a good amount of dynamic content changing within the view,
+such as social media networks (obviously, because React was developed by Facebook). Perhaps this is why it is called 'React,' because the quick reaction
+to change can save even a half second of delay in rendering.

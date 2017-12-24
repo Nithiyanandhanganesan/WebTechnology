@@ -1,0 +1,10 @@
+BootStrap CSS:
+================
+
+It is used for responsive layout.
+
+
+Quickstart:
+============
+-> Go to "getbootstrap.com/getting-started"
+-> Copy the BootStrap CDN link from that webpage to <head> tag in our webpage.

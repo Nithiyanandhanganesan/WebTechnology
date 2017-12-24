@@ -1,0 +1,52 @@
+It's a client side scripting language. Runs on the client browser.
+
+
+Quickstart:
+============
+Import JavaScript into html pages.
+1. Using script tag.
+<body>
+  <script>alert("write you code")</script>
+<body>
+
+2. Pass the JavaScript file.
+<body>
+  <script src="javascript.js"/>
+
+
+
+
+
+Place the javascript wherever required in you html page. HTML page will get execute in sequence. If you need to exucute js after page loaded, then put
+it at the end of the html page. Also, its a best practice to put the javascript in the bottom.
+
+
+Variable:
+============
+Create a variable:
+var x=1
+var name="test"
+var y="30"      => type is string. it will not recognize it as int.(x+y give 130)
+
+Arrays:
+===========
+var mylist = ['apple','banana']
+myList[0]
+
+mylist.forEach(function(value,index) {
+   console.log(value,index);
+   });
+
+Functions:
+===========
+alert("test")    => pop up dialog box with "test" in it.
+var name = prompt('enter your wish')         => open dialog box and ask for user input. Used to get input from end user.
+
+User defined functions:
+=======================
+
+function test(){
+alert("function test");
+}
+
+go();                 =>function calling statement.

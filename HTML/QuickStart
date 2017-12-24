@@ -1,0 +1,72 @@
+HTML:
+==========
+
+HyperText Markup language. Current version of html is 5.
+
+
+Basic HTML page:
+-----------------
+<!doctype html>          -> realize this is the webpage
+<HTML>                   -> starting point of webpage
+   <head>                -> contains information about the page. eg: title, language ,meta-info.
+        <title> appears in the tab name in browser </title>
+   </head>
+      <body>             -> body of the webpage
+         appears in the body of the browser
+      </body>
+</HTML>
+
+
+Basic Tags:
+==============
+<b>bold</b>
+<em>italic</em>
+<strong>bold</strong>
+<a href="google.com">hyperlink to google<a>
+<img src="google.com/images/test.jpg">
+<br> line break
+<p>paragraph</p>
+<h1>big</h1>
+<h2>not so big </h1>
+...<h6> small </h6>
+&nbsp  - space in webpage
+
+<ul>
+  <li> item1 </li>
+  <li> item2 </li>
+</ul>
+
+<ol>
+  <li> item1 </li>
+  <li> item2 </li>
+</ol>
+
+
+Web page body layout with Header & Footer Tag:
+===========================================
+
+<body>
+  <header>
+     <h1> My Page </h1>
+     <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Links</a></li>
+        </ul>
+     </nav>
+  </header>
+  <div class="row">
+    <div class="col">col1</div>
+    <div class="col">col2</div>
+    <div class="col">col13/div>
+  </div>
+
+  <Footer>Copyright my site</Footer>
+
+<body>
+
+=> Header tag is called as semantics tag. Give meaning to the content of the page. It is used while google search engine search for the page.
+=> content goes inside the div tags
+=> footer present at the bottom of the web page.
