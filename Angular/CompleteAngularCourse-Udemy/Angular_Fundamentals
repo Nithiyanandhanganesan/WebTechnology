@@ -1,0 +1,174 @@
+Component:
+==============
+-> area of the screen which user sees.
+-> encapsulates data, html template, logic
+-> eg: header, sidebar, topbar, navigation bar. [ Each is one component]
+-> every application will have atlease one component which is called 'App' or 'root' component.
+
+
+1. create a Component
+     - src -> app -> create new file and name it as xyz.component.ts
+     - below is the code snippet for creating the Component
+
+     import {Component} from '@angular/core';
+
+     @Component({
+       selector: 'courses', // <courses>
+       template: '<h2>Courses</h2>'
+     })
+     export class CourseComponent {
+     }
+
+2. register the component to the modules
+    - src > app > open "app.module.ts" file
+    - Under @NgModule -> declarations  add our component to register to that module.
+    - Code snippet
+
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule } from '@angular/core';
+
+    import { AppComponent } from './app.component';
+    import { CourseComponent } from './courses.component';       -----------> we added here.
+
+    @NgModule({
+      declarations: [
+        AppComponent,
+        CourseComponent      -----------> we added here.
+      ],
+      imports: [
+        BrowserModule
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+
+
+3. add an element in an HTML markup
+
+    - open app.component.HTML file
+    - delete everything and just add Below
+        - <h1> ANGULAR </h1>
+          <courses></courses>      ---> it will show what is been added to courses tag in CourseComponent class.
+
+Shortcut to create component from cli:  ng g c course   [ it will create html,css,ts file for that component]
+
+Modules
+=========
+-> container of group of related component.
+-> every application have atleast one module which is called as 'App' module.
+-> we can break the modules into multiple modules.
+
+Templates:
+===========
+
+
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'courses', // <courses>
+  template: '<h2>{{"Title:" + title}}</h2>'     ---> It will bind the variable value from the class to here at run time.[dynamic binding.]
+})
+
+export class CourseComponent {
+  title = "List of Courses"
+
+  getTitle(){
+    return this.title;
+  }
+}
+
+
+Directives:
+==============
+
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'courses', // <courses>
+  template: `<h2>{{"Title:" + title}}</h2>    ---> Change single quote to backtik so that we can have tags in multiple lines.
+            <ul>
+                 <li *ngFor="let course of courses"></li>      --> instead of writing list for all values, use ngFor directive to loop through courses variable.
+                 {{ course}}
+            </ul>
+            `
+
+})
+
+export class CourseComponent {
+  title = "List of Courses"
+  courses = ["course1","course2","course3"]
+
+  getTitle(){
+    return this.title;
+  }
+}
+
+
+Services:
+===========
+
+Create a file called courses.service.ts and add http calls here.
+
+courses.service.ts:
+---------------------
+export class CoursesService {
+  getCourse(){
+     return ["course1","course2","course3"]
+  }
+}
+
+courses.component.ts:
+---------------------
+
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'courses', // <courses>
+  template: `<h2>{{"Title:" + title}}</h2>    ---> Change single quote to backtik so that we can have tags in multiple lines.
+            <ul>
+                 <li *ngFor="let course of courses"></li>      --> instead of writing list for all values, use ngFor directive to loop through courses variable.
+                 {{ course}}
+            </ul>
+            `
+
+})
+
+export class CourseComponent {
+  title = "List of Courses"
+  courses ;
+
+  constructor(service : CoursesService){      ---> object creation.
+     this.courses= service.getCourses();
+  }
+
+  getTitle(){
+    return this.title;
+  }
+}
+
+app.module.ts:
+---------------
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { CourseComponent } from './courses.component';       -----------> we added here.
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    CourseComponent      -----------> we added here.
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [ CoursesService ],     ---> add the dependencies here. [dependency injection]
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+
+Command line to generate services file : ng g s sample

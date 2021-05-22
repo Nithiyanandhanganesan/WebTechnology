@@ -1,0 +1,55 @@
+div:
+======
+
+logically divides  the webpage in to section.
+<!doctype html>
+<html>
+	<head>
+    	<title>Floats</title>
+        <style type="text/css">
+			#left {
+            	float:left;              -> place where the section has to present in webpage.
+            }
+			#right {
+            	float:right;
+            }
+			#underneath {
+            	clear:both;
+            }
+        </style>
+        </head>
+    <body>
+    	<div id="background">
+    		<p id="left">This is a paragraph</p>
+        	<p id="right">This is another paragraph.</p>
+            <p id="underneath">This is yet another paragraph!</p>
+        </div>
+    </body>
+</html>
+
+
+Positioning:
+============
+
+#css {
+
+   position: relative;/fixed;/absolute;
+   left:100px
+   top:20px
+   z-index:1    -> object to appear front
+   opacity:0.5   -> blur the object.
+	 margin-left: 50px;
+	 margin-top: 30px;
+	 padding:5px;
+	 border:1px black solid;
+	 border-style: solid solid right dashed
+	 border-color: green yellow red black
+	 font-size:10px;
+	 font-family:arial;
+	 text-align:right;
+}
+
+a:hover {
+
+  font-color: green
+}

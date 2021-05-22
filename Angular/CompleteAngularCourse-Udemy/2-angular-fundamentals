@@ -1,0 +1,215 @@
+Property Binding:
+====================
+
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'courses', // <courses>
+  template: `<h2>{{"Title:" + title}}</h2>      ---> Interpolation
+             <h2 [textContent]="title"></h2>    ---> Property Binding
+             <table>
+                 <tr>
+                      <td [attr.colspan]="colspan"></td>        ---> attribute binding. since colspan is not attribite of td, we get it from class.
+                 </tr>
+             </table>
+            `
+})
+
+export class CourseComponent {
+  title = "List of Courses"
+  colspan=2 ;
+
+  constructor(service : CoursesService){      ---> object creation.
+     this.courses= service.getCourses();
+  }
+
+  getTitle(){
+    return this.title;
+  }
+}
+
+Interpolation and Property Binding does the same work. But we should not use Interpolation for binding non-string value.
+
+Adding  bootstrap:
+====================
+
+Install bootstrap
+  - Open visual studio & ctrl + backtik
+  - npm install bootstrap --save
+  - open package.json and check whether bootstrap is added to the dependencies.
+  - open style.css[global css file]
+  - add below Code
+     @import "~bootstrap/dist/css/bootstrap.css"
+
+
+Class Binding:
+==================
+
+import { Component, OnInit } from '@angular/core';
+import { AuthorService } from '../author.service';
+
+@Component({
+  selector: 'courses',
+  template: `<h2>{{"Title:" + title}} </h2>
+             <button class="btn btn-primary [class.active]="isActive"">Save</button>    ---> class binding occurs here.
+            <ul>
+                 <li *ngFor="let author of authors">
+                 {{ author }}
+                 </li>
+            </ul>
+  `
+})
+export class CourseComponent implements OnInit {
+   isActive = true;
+}
+
+
+Style Binding:
+==================
+
+import { Component, OnInit } from '@angular/core';
+import { AuthorService } from '../author.service';
+
+@Component({
+  selector: 'courses',
+  template: `<h2>{{"Title:" + title}} </h2>
+             <button [style.backgroundColor]="isActive ? 'blue' : 'white' ">Save</button>    ---> style binding occurs here.
+  `
+})
+export class CourseComponent implements OnInit {
+   isActive = true;
+}
+
+Event Binding:
+================
+Based on Keystokes, move movement etc.,
+
+import { Component, OnInit } from '@angular/core';
+import { AuthorService } from '../author.service';
+
+@Component({
+  selector: 'courses',
+  template: `<h2>{{"Title:" + title}} </h2>
+             <button (click)="onSave()">Save</button>    ---> event binding occurs here.
+  `
+})
+export class CourseComponent implements OnInit {
+   isActive = true;
+   onSave(){
+     console.log('Button clicked')
+   }
+}
+
+Event Filtering:
+================
+
+import { Component, OnInit } from '@angular/core';
+import { AuthorService } from '../author.service';
+
+@Component({
+  selector: 'courses',
+  template: `<h2>{{"Title:" + title}} </h2>
+             <input (keyup.enter)="onKeyUp($event)"/>     ---> it will call the Onkeyup method only if use press enter key.
+  `
+})
+export class CourseComponent implements OnInit {
+   isActive = true;
+   onKeyUp($event){
+     if($event.keyCode === 13 ) console.log('enter was pressed')
+   }
+}
+
+
+Template Variables:
+====================
+
+import { Component, OnInit } from '@angular/core';
+import { AuthorService } from '../author.service';
+
+@Component({
+  selector: 'courses',
+  template: `<h2>{{"Title:" + title}} </h2>
+             <input (keyup.enter)="onKeyUp($event)"/>     ---> it will call the Onkeyup method only if use press enter key.
+  `
+})
+export class CourseComponent implements OnInit {
+   isActive = true;
+   onKeyUp($event){
+     console.log($event.target.value)   ---> will get the value from html
+   }
+}
+
+Another way to declare the template variable
+
+@Component({
+  selector: 'courses',
+  template: `<h2>{{"Title:" + title}} </h2>
+             <input #email (keyup.enter)="onKeyUp(email.value)"/>     ---> #email is template Variable
+  `
+})
+export class CourseComponent implements OnInit {
+   isActive = true;
+   onKeyUp(email){
+     console.log(email)   ---> will get the value from html
+   }
+}
+
+
+Two Way Binding:
+=====================
+
+
+@Component({
+  selector: 'courses',
+  template: `<h2>{{"Title:" + title}} </h2>
+             <input [value]="email" (keyup.enter)="email = $event.target.value; onKeyUp()"/>     ---> one ways
+             <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/>                              ---> another way
+  `
+})
+export class CourseComponent implements OnInit {
+   email="test@test.com"
+
+   onKeyUp(){
+     console.log(this.email)   ---> will get the value from html
+   }
+}
+
+Note: We need to add dependency in app.module.ts file for ngModel.
+import { FormsModule } from '@angular/forms';
+
+imports: [
+    BrowserModule,
+    FormsModule
+  ],
+
+Pipes:
+======
+
+Use pipes to format the data.
+
+import { Component, OnInit } from '@angular/core';
+import { AuthorService } from '../author.service';
+
+@Component({
+  selector: 'courses',
+  template: `<h2>{{"Title:" + title}} </h2>
+             {{ course.title1 | uppercase }} <br/>      --> used uppercase function with pipe
+  `
+})
+export class CourseComponent implements OnInit {
+
+  isActive=false;
+
+  course = {
+    title1:"test",
+    rating:123
+  }
+
+  ngOnInit() {
+  }
+
+}
+
+
+Create custom pipes:
+=================

@@ -1,0 +1,59 @@
+Angular:
+  - framework for building client application in HTML, CSS and Javascript/Typescript.
+
+Architecture:
+-------------
+                  API request
+  Front end      ------------- >           Backend
+   (Client)      <------------      (Data and processing)
+  (HTML, CSS
+   ,Typescript)
+
+Install Angular:
+------------------
+- install latest version of nodejs(run time environment for running Javascript outside browser) from nodejs.org website.
+- install the libraries using node package manager(npm)
+- sudo npm install -g @angular/cli  [ it gives boilerplate angular code.]
+- create new project from cli
+    -> ng new hello-world
+    -> open  visual code & press shift + command + P (it will open the command pallette)
+    -> type code & select "Install code command in PATH" option.
+    -> now go to the terminal and move the project folder
+    -> type "code ."
+    -> it will open the project in the visual code.
+    -> to deploy the code in server enter "ng serve"
+    -> it will give the host and port (http://localhost:4200/)
+
+Project Structure:
+===================
+
+hello-world
+  - e2e [ it will have end to end test case for application ]
+  - node_modules [ it will have all the third party library which application depends on]
+  - src [ it will have source code for the application]
+      - app
+      - assets            [ store static asset of the application like images,icons etc.,]
+      - environments      [ store configuration settings for different environment]
+      - favicon.ico       [ icon displayed in the browser]
+      - index.html
+      - main.ts           [ starting point of application. its Typescript file.]
+      - polyfills.ts      [ bridge the gap between js and browser by downloading the required libraries]
+      - style.css         [ Global CSS for the application]
+      - test.ts           [ used of testing environment]
+  - .angular-cli.json     [ configuration file]
+  - .editorconfig         [ all team members use the same editor configuration]
+  - .gitignore            [ exclude file while commit to git]
+  - karma.conf.js         [ test runner of js code]
+  - package.json          [ libraries and dependencies were mentioned here]
+  - protractor.conf.js    [ running end to end test case]
+  - tsconfig.json         [ setting for typescript compiler]
+  - tslint.json           [ setting for tslint]
+
+Once we save the changes, webpack will automatically compile the changes and in browser we can see the changes without refreshing the browser.
+
+
+Angular Version History:
+===========================
+
+2010 - AngularJs introduced [1.x]
+2016 - Angular 2 [ better framework] [2.1,2.2,2.3]

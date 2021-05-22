@@ -1,0 +1,253 @@
+TypeScript:
+=============
+- Superset of Javascript
+- Any valid JS code is also a valid typescript code.
+- Compiler transpile the typescript to JS code so that browser can understand.
+Features:
+  - Strong typing
+  - Object oriented
+  - Compile time errors
+  - Great tooling
+
+
+Install Typescript:
+=====================
+
+sudo npm install -g typescript
+-> check whether its installed
+
+Create the first program:
+==========================
+- mkdir typescript_code_basic
+- cd typescript_code_basic
+- code main.ts    [it will open the main.ts in visual code]
+
+- Create the sample typescript code:
+
+function log(message){
+   console.log(message)
+}
+
+var message = 'hello world';
+log(message);
+
+
+- Save and compile the above typescript code
+    tsc main.ts    [ it will transpile the main.ts to main.js]
+
+- When we run angular app, ng serve will convert all TypeScript file to JS file.
+- Run the script using below command:
+     node main.js
+
+
+Declaring Variables:
+=====================
+
+Two ways to declare Variable:
+
+1) var count =1;  [ if we declare the variable inside if/for block , still it will be available anywhere in the function]
+2) let count =1;  [ limit the scope of the variable on the block in which its declared]
+
+
+Types:
+========
+
+let a=1;
+a='test'    ---> Typescript will throw the compilation error.
+var b=1
+b='test'    ---> It will not throw compilation error. in JS dataype is not considered.
+
+
+let a;
+a=1;
+a='test';  ---> typescript will not throw any error
+a=true;    ---> typescript will not throw any error
+
+In order the create a variable with datatype, use
+let a: number;
+a=1;
+a='test'   ---> Typescript will throw the compilation error.
+
+
+let a:number;
+let b:boolean:
+let c:string;
+let d:any;
+let e:number[]=[1,2,3];
+let f: any[] =[1,'true','a']
+
+IN JS:
+const red=0;
+const green=1;
+
+In Typescript:
+enum Colour {red,green};
+enum test {a=1,b=5};
+let backgrndcolor = Colour.red;
+First element in the enum automatically get the value of 0 if value is not assigned.
+
+
+Type Assertions:
+==================
+
+let message;     [this of type any]
+message='abc';
+let c =   (<sting> message).endswith('c');    [convert the any type to string type one way]
+let d = (message as string).endswith('c');    [ another way]
+
+Arrow Functions:
+==================
+
+let log = (message) => {
+  console.log("test");
+}
+
+above function is similar to
+
+let log = function(message){
+  console.log("test");
+}
+
+Interface:
+================
+
+Instead of passing variable to function, we can also pass object to the function. Below script does that:
+
+interface Point {
+  x:number,
+  y:number
+}
+
+let drawPoint =(point: Point){
+   //..
+}
+
+drawPoint ({x:1,y:2})
+
+
+Classes:
+================
+
+class Point {
+  x: number;
+  y: number;
+  draw(){
+     console.log('X:' + this.x);
+  }
+
+  getDistance(another:Point){
+    //..
+  }
+}
+
+let point = new Point();                ---->object creation
+point.x=1;
+point.draw()
+
+
+Constructors:
+===============
+In typescript we cannot have multiple Constructors.
+
+class Point {
+  x: number;
+  y: number;
+
+  constructor(x:number,y:number) {
+    this.x=x;
+    this.y=y;
+  }
+  draw(){
+     console.log('X:' + this.x);
+  }
+
+  getDistance(another:Point){
+    //..
+  }
+}
+
+let point = new Point(1,2);                ---->object creation
+point.draw()
+
+
+If we want to create object without passing the value to Constructors, then create Constructors with optional argument.
+constructor(x?:number,y?:number)
+
+? -> indicates that parameter is optional. So, we can create object like let point = new Point()
+
+
+Access Modifiers:
+====================
+- public, private, protected
+- by default all members are public.
+
+class Point {
+  private x: number;
+  private y: number;
+  draw(){
+     console.log('X:' + this.x);
+  }
+
+  getDistance(another:Point){
+    //..
+  }
+}
+
+let point = new Point(1,2);                ---->object creation
+point.x=1;         --> it will throw compilation error. because it is declared as private.
+point.draw()
+
+
+If we declare the object as private, we dont have way to get the variable outside the class.
+As a workaround, we need to have getter and setter to do that.
+
+class Point {
+  private x: number;
+  private y: number;
+  draw(){
+     console.log('X:' + this.x);
+  }
+
+  getX{
+     return this.x;
+  }
+
+  setX(value){
+     this.x = value;
+  }
+}
+
+let point = new Point(1,2);                ---->object creation
+point.draw();
+point.getX();
+point.setX(5);
+
+Modules:
+============
+
+-> We can write Class Point in separate file and object creation in separate file.
+-> To do that , we need to add export keyword to the class  Point & import keyword to the object creation class.
+
+Point.ts
+
+export class Point {
+  private x: number;
+  private y: number;
+  draw(){
+     console.log('X:' + this.x);
+  }
+
+  getX{
+     return this.x;
+  }
+
+  setX(value){
+     this.x = value;
+  }
+}
+
+main.ts
+
+import {Point} from './point'
+let point = new Point(1,2);                ---->object creation
+point.draw();

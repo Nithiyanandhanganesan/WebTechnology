@@ -22,6 +22,11 @@ Basic Tags:
 <b>bold</b>
 <em>italic</em>
 <strong>bold</strong>
+<ins>underline</ins>
+<sup>superscript</sup>
+<sub>subscript</sub>
+<del>strikeout</del>
+<hr> -> horizontal line
 <a href="google.com">hyperlink to google<a>
 <img src="google.com/images/test.jpg">
 <br> line break
@@ -36,11 +41,12 @@ Basic Tags:
   <li> item2 </li>
 </ul>
 
-<ol>
+<ol start="5">
   <li> item1 </li>
   <li> item2 </li>
 </ol>
 
+<img src="google.com/images/test.jpg" width="100" height="100" align="left">
 
 Web page body layout with Header & Footer Tag:
 ===========================================
@@ -70,3 +76,83 @@ Web page body layout with Header & Footer Tag:
 => Header tag is called as semantics tag. Give meaning to the content of the page. It is used while google search engine search for the page.
 => content goes inside the div tags
 => footer present at the bottom of the web page.
+
+
+Forms:
+============
+
+<!doctype html>
+<html>
+    <head>
+	    <title>Forms</title>
+    </head>
+    <body>
+    	<form>
+        	<p>Name: <input type ="text" placeholder="your name"></p>
+          <p>Age: <input type="number"></p>
+          <p> Stay logged in <input type="checkbox"></p>
+          <p> under 18: <input type="radio" name="age" value="u18"> </p>
+          <p> over 18: <input type="radio" name="age" value="o18"> </p>
+        	<p>Favourite colour:
+            	<select>
+            		<option>blue</option>
+        			  <option selected>red</option>
+            		<option>yellow</option>
+            		<option>green</option>
+             	</select>
+        	</p>
+          <p> <input type="submit" value="click me"></p>
+        </form>
+    </body>
+</html>
+
+
+Tables:
+============
+
+<!doctype html>
+<html>
+    <head>
+	    <title>Forms</title>
+    </head>
+    <body>
+
+      <table>
+         <thead>
+             <tr>
+                 <th> Name </th>
+                 <th> Age </th>
+             </tr>
+         </thead>
+
+         <tbody>
+             <tr>
+                 <td> anand </td>
+                 <td> 20 </td>
+             </tr>
+
+             <tr>
+                 <td> xyz </td>
+                 <td> 18 </td>
+             </tr>
+         </tbody>
+      </table>
+    </body>
+</html>
+
+
+HREF:
+==========
+
+<!doctype html>
+<html>
+<head>
+	<title>Links</title>
+</head>
+    <body>
+    	<p id="bbc"><a href="http://bbc.co.uk">BBC Website</a></p>
+    	<p><a href="http://cnn.com">CNN Website</a></p>
+    	<p><a href="http://google.com">Favourite news site</a></p>
+    	<p><a href="#bbc">Back to the first link</a></p>
+    </body>
+</html>

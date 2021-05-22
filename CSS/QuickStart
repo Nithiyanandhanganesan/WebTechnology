@@ -29,7 +29,7 @@ div.row{
 
 Attach style CSS to HTML:
 ==============================
-1. In Head tag with css coding:
+1. In Head tag with css coding: [Internal CSS]
 <head>
     <title> my title </title>
     <style type ="text/css">
@@ -44,6 +44,9 @@ Attach style CSS to HTML:
     <title> my title </title>
     <link href="test.css"  rel="stylesheet" type="text/css"/>
 </head>
+
+3. Inline CSS
+<p style="color:blue"> test blue</p>
 
 
 
@@ -63,7 +66,18 @@ p {
 }
 
 So, all <p> tag will be in red and if any <p> tag with class="secondary" it will be in grey.
+(.)dot represent class in css.
 The same class can be added to any tags in html.
+
+
+<p id="secondary"> this is test </p>
+
+#secondary{
+    background:grey;
+}
+
+We can use id instead of class. (#) ash represent id. Id has high priority than class.
+id's are unique whereas class is not.
 
 Hierarchy:
 Id => Class => htmltag
