@@ -1,0 +1,49 @@
+React:
+======
+
+ - JavaScript librray used to create websites
+
+
+
+Setup Reactor APP:
+==================
+
+ - install node
+ - cd /Users/nithiyanandhan/IdeaProjects/WebTechnology/ReactJS
+ - npx create-react-app first-project
+
+ - npm run start
+ - npm install  -> install all the dependency. like pom.xml reload
+
+
+
+Folder Structure:
+=================
+
+- node_modules
+   - all dependency present in this folder
+
+- public
+   - all public files to the browser present here
+   - it contains index.html , all react files will be injected to this main file.
+
+- src
+   - all source code present inside this folder
+
+- src/index.js
+   - starting point for the application
+
+
+- package.json
+   - list all the dependency required for this project.
+
+
+
+Components:
+=============
+
+  - component is core of react.
+  - website made of react contain several component.
+  - Eg: in facebook page, like is one component, share is one component etc.,
+  - Each component has separate logic and template.
+  -

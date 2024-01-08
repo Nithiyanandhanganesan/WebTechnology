@@ -3,13 +3,18 @@ CSS:
 CSS stands for cascading style sheet. It is used to beautify the html pages.
 
 
+Inline - by using the style attribute inside HTML elements
+Internal - by using a <style> element in the <head> section
+External - by using a <link> element to link to an external CSS file
+
 
 Basic CSS commands:
 ======================
 
-htmltag {
+htmltag {     -> htmltag is selector
    property:value;
 }
+
 
 Eg:
 
@@ -39,7 +44,7 @@ Attach style CSS to HTML:
     </style>
 </head>
 
-2. Link CSS file in HTML page:
+2. Link CSS file in HTML page: [External CSS]
 <head>
     <title> my title </title>
     <link href="test.css"  rel="stylesheet" type="text/css"/>
@@ -80,6 +85,7 @@ We can use id instead of class. (#) ash represent id. Id has high priority than 
 id's are unique whereas class is not.
 
 Hierarchy:
+-----------
 Id => Class => htmltag
 
 
@@ -99,3 +105,72 @@ If you want to apply style only to above list and not to all the list present in
 nav ul p {
    background:red;
 }
+
+Combining Selectors:
+=====================
+
+<div class="hotdog">
+  <p>...</p>
+  <p>...</p>
+  <p class="mustard">...</p>
+</div>
+
+
+.hotdog p {
+  background: brown;
+}
+.hotdog p.mustard {
+  background: yellow;
+}
+
+The second selector, with its two classes, has a noticeably higher specificity weight and point value.
+
+
+Layering Styles with Multiple Classes:
+=======================================
+<a class="btn btn-danger">...</a>
+<a class="btn btn-success">...</a>
+
+.btn {
+  font-size: 16px;
+}
+.btn-danger {
+  background: red;
+}
+.btn-success {
+  background: green;
+}
+
+We want all of our buttons to have a font size of 16 pixels,
+but we want the background color of our buttons to vary depending on where the buttons are used.
+
+
+CSS CheatSheet:
+=================
+
+p {
+  color: blue;
+  font-family: verdana;
+  font-size: 300%;
+  border: 2px solid powderblue;
+  padding: 30px;
+  margin: 50px;
+  background-image: url('img_girl.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-size: 100% 100%;
+}
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+}
+
+CSS Resets:
+=============
+
+How Google Chrome renders headings, paragraphs, lists, and so forth may be different from how Internet Explorer does.
+ To ensure cross-browser compatibility, CSS resets have become widely used.
+
+One of the most popular resets is Eric Meyer’s reset, which has been adapted to include styles for the new HTML5 elements.

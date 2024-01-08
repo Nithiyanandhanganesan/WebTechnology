@@ -1,7 +1,13 @@
 HTML:
 ==========
 
+
+HTML 1 created in 1990 to connect documents via hyperlinks
+1993 , Mosaic emerged as first graphical browser.
+
+
 HyperText Markup language. Current version of html is 5.
+HTML is Not Case Sensitive
 
 
 Basic HTML page:
@@ -10,6 +16,7 @@ Basic HTML page:
 <HTML>                   -> starting point of webpage
    <head>                -> contains information about the page. eg: title, language ,meta-info.
         <title> appears in the tab name in browser </title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">   A favicon image is displayed to the left of the page title in the browser tab
    </head>
       <body>             -> body of the webpage
          appears in the body of the browser
@@ -28,6 +35,9 @@ Basic Tags:
 <del>strikeout</del>
 <hr> -> horizontal line
 <a href="google.com">hyperlink to google<a>
+<a href="http://shayhowe.com/" target="_blank">OPEN LINK IN NEW TAB</a>
+<a href="default.asp"><img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;"></a>  (image as link)
+<a href="mailto:someone@example.com">Send email</a>
 <img src="google.com/images/test.jpg">
 <br> line break
 <p>paragraph</p>
@@ -35,6 +45,15 @@ Basic Tags:
 <h2>not so big </h1>
 ...<h6> small </h6>
 &nbsp  - space in webpage
+<blockquote> - element defines a section that is quoted from another source.
+<q> - tag defines a short quotation.
+<abbr> -  tag defines an abbreviation or an acronym, like "HTML".
+<button onclick="document.location='default.asp'">HTML Tutorial</button>
+<var> element  is used to define a variable in programming
+<kbd> element defines keyboard input
+<samp> element defines sample output from a computer program
+The <section> element defines a section in a document.
+<aside> element defines some content aside from the content it is placed
 
 <ul>
   <li> item1 </li>
@@ -48,8 +67,44 @@ Basic Tags:
 
 <img src="google.com/images/test.jpg" width="100" height="100" align="left">
 
+HTML Entities:
+=================
+
+< (less than) = &lt;
+> (greather than) = &gt;
+&amp
+&quot;
+&apos;
+&copy;
+&reg;
+
+Divisions & Spans:
+===================
+
+Divisions, or <div>s, and <span>s are HTML elements that act as containers solely for styling purposes.
+Paragraphs are semantic in that content wrapped within a <p> element is known and understood as a paragraph.
+<div>s and <span>s do not hold any such meaning and are simply containers.
+
+
+A <div> is a block-level element that is commonly used to identify large groupings of content,
+and which helps to build a web page’s layout and design.
+The <div> element has no required attributes, but style, class and id are common.
+The <div> element is often used to group sections of a web page together.
+
+A <span>, on the other hand, is an inline-level element commonly used to identify smaller groupings of text within a
+block-level element.
+
+<!-- Division -->
+<div class="social">
+  <p>I may be found on...</p>
+  <p>Additionally, I have a profile on...</p>
+</div>
+
+<!-- Span -->
+<p>Soon we'll be <span class="tooltip">writing HTML</span> with the best of them.</p>
+
 Web page body layout with Header & Footer Tag:
-===========================================
+==============================================
 
 <body>
   <header>
@@ -78,6 +133,49 @@ Web page body layout with Header & Footer Tag:
 => footer present at the bottom of the web page.
 
 
+The problem was that divisions provide no semantic value, and it was fairly difficult to determine the
+intention of these divisions.
+Fortunately HTML5 introduced new structurally based elements,
+including the <header>, <nav>, <article>, <section>, <aside>, and <footer> elements.
+
+The <header> element is a structural element that outlines the heading of a segment of a page. It falls within the <body> element.
+The <nav> element identifies a section of major navigational links on a page.
+The <article> element is used to identify a section of independent, self-contained content that may be independently distributed or reused.
+The <section> element is commonly used to break up and provide hierarchy to a page.
+The <aside> element holds content, such as sidebars, inserts, or brief explanations
+The <footer> element identifies the closing or end of a page
+
+
+Bookmark in HTML:(Jump to section in HTML)
+============================================
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p><a href="#C4">Jump to Chapter 4</a></p>
+<p><a href="#C3">Jump to Chapter 3</a></p>
+
+<h2>Chapter 1</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 2</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2 id="C3">Chapter 3</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2 id="C4">Chapter 4</h2>
+<p>This chapter explains ba bla bla</p>
+
+
+</body>
+</html>
+
+
+HTML Favicon:
+=============
+
 Forms:
 ============
 
@@ -88,7 +186,7 @@ Forms:
     </head>
     <body>
     	<form>
-        	<p>Name: <input type ="text" placeholder="your name"></p>
+          <p>Name: <input type ="text" placeholder="your name"></p>
           <p>Age: <input type="number"></p>
           <p> Stay logged in <input type="checkbox"></p>
           <p> under 18: <input type="radio" name="age" value="u18"> </p>
@@ -107,6 +205,34 @@ Forms:
 </html>
 
 
+
+<form action="/action_page.php">  - The action attribute defines the action to be performed when the form is submitted.
+<form action="/action_page.php" method="get"> - The method attribute specifies the HTTP method to be used when submitting the form data.
+<form action="/action_page.php" autocomplete="on"> - The autocomplete attribute specifies whether a form should have autocomplete on or off.
+
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+
 Tables:
 ============
 
@@ -118,6 +244,7 @@ Tables:
     <body>
 
       <table>
+         <caption>Table Caption</caption>
          <thead>
              <tr>
                  <th> Name </th>
@@ -156,3 +283,15 @@ HREF:
     	<p><a href="#bbc">Back to the first link</a></p>
     </body>
 </html>
+
+
+Responsive Web Design:
+==========================
+
+Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge,
+a website, to make it look good on all devices (desktops, tablets, and phones):
+
+
+To create a responsive website, add the following <meta> tag to all your web pages:
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">

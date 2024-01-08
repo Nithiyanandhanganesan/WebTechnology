@@ -1,0 +1,13 @@
+https://reactnative.dev/docs/environment-setup
+
+
+Select "React Native CLI Quickstart" and follow the steps:
+
+1) install node version greater than 18
+
+2) brew install watchman
+    - Watchman is a tool by Facebook for watching changes in the filesystem.
+      It is highly recommended you install it for better performance.
+
+
+3)
