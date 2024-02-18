@@ -10,4 +10,29 @@ Select "React Native CLI Quickstart" and follow the steps:
       It is highly recommended you install it for better performance.
 
 
-3)
+3) install xcode from appstore & select iOS in Xcode to download ios
+
+
+4) brew install cocoapods
+     - cocoapods is one of the dependency management system available for ios.
+
+
+5) npx react-native@latest init AwesomeProject
+     - go to folder where you want to create project and run above command
+
+6) go inside the project and go to ios directory and run below command
+     - pod install
+
+
+7) Above commadn will fail while installing boost. follow below steps to fix this:
+     - go to node_modules/react-native/third-party-podspecs/boost.podspec
+     - change the spec.source bit to { http: => 'https://sourceforge.net/projects/boost/files/boost/1.83.0/boost_1_83_0.tar.bz2',
+        : sha256 => ( keep this bit the same) }
+     - go to ios directory
+     - execute "pod install" and it should work
+
+
+8) execute below command inside project folder to run react native application
+    - npm start
+
+    - npm run ios (execute in separate terminal)

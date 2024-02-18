@@ -2,5 +2,30 @@ React Native:
 ==============
 
 
- - Used for developing mobile application.
+ - React Native is an open source framework for building Android and iOS applications using React
+   and the app platform’s native capabilities.
+ - React Native is like React, but it uses native components instead of web components as building blocks.
+ - In Android and iOS development, a "view" is the basic building block of UI
+ - In Android development, you write views in Kotlin or Java; in iOS development,
+    you use Swift or Objective-C.
+   With React Native, you can invoke these views with JavaScript using React components.
  -
+
+
+
+ Props:
+ ========
+
+
+
+
+ State:
+ =======
+
+
+
+
+
+
+
+

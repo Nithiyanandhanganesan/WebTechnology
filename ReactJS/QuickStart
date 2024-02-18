@@ -1,7 +1,7 @@
 React:
 ======
 
- - JavaScript librray used to create websites
+ - JavaScript library used to create websites
 
 
 
@@ -32,7 +32,12 @@ Folder Structure:
 
 - src/index.js
    - starting point for the application
+   - Render the App component to the root element in index.html
 
+- src/App.js
+   - Root component
+   - initially rendeered in html
+   - If we make multiple component, we nest those component under this App.js
 
 - package.json
    - list all the dependency required for this project.
@@ -46,4 +51,10 @@ Components:
   - website made of react contain several component.
   - Eg: in facebook page, like is one component, share is one component etc.,
   - Each component has separate logic and template.
-  -
+
+
+JSX:
+=====
+   - JSX allows to create HTML style template.
+   - in background , it converts all JSX to html
+   -
