@@ -4,6 +4,7 @@ React Native:
 
  - React Native is an open source framework for building Android and iOS applications using React
    and the app platform’s native capabilities.
+ - Developed by Meta , designed for building cross-platform apps.
  - React Native is like React, but it uses native components instead of web components as building blocks.
  - In Android and iOS development, a "view" is the basic building block of UI
  - In Android development, you write views in Kotlin or Java; in iOS development,
