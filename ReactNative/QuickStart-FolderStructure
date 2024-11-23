@@ -1,0 +1,29 @@
+package.json:
+==============
+
+ - it will have all dependencies, scripts & metadata.
+
+package-lock.json:
+==================
+  - no need to worry about this file. it will automatically generates based on package.json.
+
+app.json:
+=========
+
+  - Contains configuration options for the project and is called the app config. These options change the behavior of your project while developing, building, submitting, and updating your app.
+
+App.js:
+========
+  - Default screen for the application. Acts as a root file that load when server start the application.
+
+node_modules:
+=============
+   - It will have all dependencies required to run the application.
+
+assests:
+=========
+   - adaptive-icon.png - Android.
+   - icon.png - Ios
+   - splash.png - used for splash screen. 
+   - favicon.png - used if application runs in browser.
+   - This folder acts as a storage for all images, videos required for the application.

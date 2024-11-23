@@ -1,6 +1,43 @@
 https://reactnative.dev/docs/environment-setup
 
 
+Best way to experience React Native is through a Framework, a toolbox with all the necessary APIs to let you build production ready apps.
+
+You can also use React Native without a Framework, however we’ve found that most developers benefit from using a React Native Framework like Expo. Expo provides features like file-based routing, high-quality universal libraries, and the ability to write plugins that modify native code without having to manage native files.
+
+Can I use React Native without a Framework?
+  Yes. You can use React Native without a Framework. However, if you’re building a new app with React Native, we recommend using a Framework.
+
+Without a Framework, you’ll either have to write your own solutions to implement core features, or you’ll have to piece together a collection of pre-existing libraries to create a skeleton of a Framework.
+
+Start a new React Native project with Expo:
+============================================
+
+Expo is a production-grade React Native Framework. Expo provides developer tooling that makes developing apps easier, such as file-based routing, a standard library of native modules, and much more.
+
+Expo's Framework is free and open source. The Expo team works in close collaboration with the React Native team at Meta to bring the latest React Native features to the Expo SDK.
+
+1. To create a new Expo project, run the following in your terminal:
+
+   npx create-expo-app@latest HelloWorld
+
+2. Run the application in mobile.
+     - go to project folder and run  "npm start"
+     - Download "Expo Go" app from Play Store(Android) / AppStore(iOS)
+     - Make sure compute and mobile connected to same wifi network. 
+     - Scan the QR code which appeared when we run the npm start command. 
+     - Now you can see app running the your phone. 
+     - Edit app/(tabs)/index.tsx file to see the changes. 
+
+3. Run the application in simulator
+     - iOS simulator runs only on MAC. 
+     - Download XCode from AppStore.
+     - 
+  
+
+
+Set up your environment without a framework: (not Recommended)
+================================================================
 Select "React Native CLI Quickstart" and follow the steps:
 
 1) install node version greater than 18
