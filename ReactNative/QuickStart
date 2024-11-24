@@ -1,7 +1,6 @@
 React Native:
 ==============
 
-
  - React Native is an open source framework for building Android and iOS applications using React
    and the app platform’s native capabilities.
  - Developed by Meta , designed for building cross-platform apps.
@@ -11,6 +10,156 @@ React Native:
     you use Swift or Objective-C.
    With React Native, you can invoke these views with JavaScript using React components.
  -
+
+Core Components:
+=================
+
+  - When we use React to create webpage, we use HTML tags, such div, span and paragraph. These tags wont work in React Native. Because ReactNative does not have concept of DOM.
+
+  - In ReactNative, use fundamental building block called "view" for user interfaces.
+
+  - View is small rectangular element on the screen that can display images, text or respond to user input. 
+   
+  - Views can be developed using JavaScript using React components.
+
+  Web Tag vs React Native Tag:
+  <div>  -  <View>
+  <p>    -  <Text>
+  <img>  -  <Image>
+  <div>  -  <ScrollView>
+  <input type="text"> -  <TextInput>
+
+1) VIEW:
+----------
+   - Fundamental core components serves as a building block for createing User Interface.
+   - It works as a container that supports layout using flexbox, styling, touch handling and accessiblity controls. 
+   - View can nested inside other views. Can have zero or more children of any type. 
+   
+   Sample Code:
+   import {View} from "react-native";
+
+     export default function App(){
+        return <View style={{ flex:1 , backgroundColor:"yellow"}}>
+         <View style={{width:200, height:100, backgroundColor:"red"}}></View>
+         <View style={{width:200, height:100, backgroundColor:"lightblue"}}></View>
+        </View>
+      } 
+
+2. TEXT:
+--------
+   - Component for displaying text. 
+   - Depending on the target platform, React Native will translate this component to either UITextView(iOS), TextView(Android) or a 'p' (Web)
+
+   Sample Code:
+   import {View,Text} from "react-native";
+
+     export default function App(){
+       return <View style={{ flex:1 , backgroundColor:"yellow", padding:60}}>
+       <Text>
+          <Text style={{color:"red"}}>Hello</Text> 
+          World!!</Text>
+       </View>
+      }
+
+3. Image:
+---------
+   - Display images from static image, network image, image from local disk.
+   export default function App(){
+    return <View style={{ flex:1 , backgroundColor:"yellow", padding:60}}>
+     <Image source={logoImg} style={{ width:200 , height:200}}/>
+     <ImageBackground source={logoImg}>
+      <Text>Image Text </Text>
+     </ImageBackground>
+    </View>
+   }
+
+4. ScrollView:
+--------------
+   - wraps the content with scroll functionality.
+   export default function App(){
+  return <View style={{ flex:1 , backgroundColor:"yellow", padding:60}}>
+    <ScrollView>
+     <Image source={logoImg} style={{ width:200 , height:200}}/>
+     <Text>
+     A week ago a friend invited a couple of other couples over for dinner.
+     </Text>
+     </ScrollView>
+  </View>
+
+5. Button:
+-----------
+   - Allow user to trigger actions. 
+   export default function App(){
+    return <View style={{ flex:1 , backgroundColor:"yellow", padding:60}}>
+    <Button
+     title='Press' 
+     onPress={() => console.log("button pressed")} 
+     color={'blue'}
+     disabled
+     />
+    </View>
+  }
+
+6. Pressable:
+--------------
+   - Make any existing component such as image, text as pressable.
+   - Create custom button and make it pressable if you dont like default button.
+
+   export default function App(){
+   return <View style={{ flex:1 , backgroundColor:"yellow", padding:60}}>
+     <Pressable onPress={() => console.log("Image Pressed")}>
+     <Image source={logoImg} style={{ width:200 , height:200}}/>
+     </Pressable>
+   </View>
+   }
+
+7. Modal:
+---------
+   - Screen that overlays the app content to provide important information or prompt the user for a decision.
+
+   export default function App(){
+   const [isModalVisible, setIsModalVisible] = useState(false);
+   return <View style={{ flex:1 , backgroundColor:"yellow", padding:60}}>
+    <Button
+     title='Press' 
+     onPress={() => setIsModalVisible(true)} 
+     color={'blue'}
+     />
+     <Modal visible={isModalVisible}>
+        <View style={{ flex:1, backgroundColor:"blue", padding:60}}>
+          <Text>Model content</Text>
+          <Button title="Close" color="red" onPress={() => setIsModalVisible(false)}/>
+        </View>
+      </Modal>
+   </View>
+}
+
+
+8. StatusBar:
+---------------
+   -  Allows to control application's status bar located on top of the screen where it shows battery percentage, time, wifi , network status.
+
+9. ActivityIndicator:
+-----------------------
+   - displays circular loading indicator.
+   - Used to inform users about the status of ongoing process such as loading an app, submitting the form etc.,
+   export default function App(){
+   const [isModalVisible, setIsModalVisible] = useState(false);
+   return <View style={{ flex:1 , backgroundColor:"yellow", padding:60}}>
+    <ActivityIndicator/>
+    <ActivityIndicator size={"large"}/>
+    <ActivityIndicator size={"large"} color={"midnightblue"} animating="false"/>
+   </View>
+   }
+
+10. Alert:
+----------
+   - Launches alert dialog with specified title and message. 
+
+
+
+
+
 
 
 

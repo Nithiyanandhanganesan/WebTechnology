@@ -20,6 +20,7 @@ Expo's Framework is free and open source. The Expo team works in close collabora
 1. To create a new Expo project, run the following in your terminal:
 
    npx create-expo-app@latest HelloWorld
+   npx create-expo-app@latest CoreComponents --template blank@sdk-49 (this one creates in different format)
 
 2. Run the application in mobile.
      - go to project folder and run  "npm start"
