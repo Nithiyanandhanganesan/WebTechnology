@@ -23,7 +23,7 @@ Expo's Framework is free and open source. The Expo team works in close collabora
 
 2. Run the application in mobile.
      - go to project folder and run  "npm start"
-     - Download "Expo Go" app from Play Store(Android) / AppStore(iOS)
+     - Download "`Expo Go" app from Play Store(Android) / AppStore(iOS)
      - Make sure compute and mobile connected to same wifi network. 
      - Scan the QR code which appeared when we run the npm start command. 
      - Now you can see app running the your phone. 
@@ -32,7 +32,8 @@ Expo's Framework is free and open source. The Expo team works in close collabora
 3. Run the application in simulator
      - iOS simulator runs only on MAC. 
      - Download XCode from AppStore.
-     - 
+     - XCode -> "Open Developer Tools" > "Simulator" 
+     - Press "i" in the terminal to load the application.
   
 
 
