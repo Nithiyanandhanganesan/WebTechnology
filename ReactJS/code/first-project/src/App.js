@@ -1,41 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './Navbar';
+import { Component } from 'react';
+import Greet from './components/Greet';
+import Welcome from './components/Welcome';
+import Hello from './components/Hello';
+import GreetProps from './components/GreetProps';
+import WelcomeProps from './components/WelcomeProps';
+import Message from './components/Message';
 
-function App() {
-
-  const title = 'Test message'
-  const link = "https://www.google.com"
+class App extends Component{
+  render(){
   return (
     <div className="App">
-      <Navbar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p> This is {title}
-            { 10}
-            {1,2,3,4,5}
-            {Math.random() * 10}
-        </p>
-        <p>
-          <a href={link}>Google</a>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <div className="content">
-        <h1>test</h1>
-      </div>
+      <Greet/>
+      <GreetProps name="PropsTest" heroName="vikram">
+         <p> This is children props</p>
+      </GreetProps>
+      <GreetProps name="PropsTest1" heroName="surya">
+        <button>Action</button>
+      </GreetProps>
+      <Welcome/>
+      <WelcomeProps name="PropsTest2" heroName="vijay">
+      </WelcomeProps>
+      <Hello/>
+      <Message/>
     </div>
   );
+  }
 }
 
 export default App;

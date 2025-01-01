@@ -2,7 +2,9 @@ React:
 ======
 
  - JavaScript library used to create websites
-
+ - Open source library for building user interfaces.
+ - Created by Facebook.
+ - Component Based Architecture.
 
 
 Setup Reactor APP:
@@ -26,6 +28,9 @@ Folder Structure:
 - public
    - all public files to the browser present here
    - it contains index.html , all react files will be injected to this main file.
+   - index.html is the only html file in our application. 
+   - No change required in this file. Because react will control the UI.
+
 
 - src
    - all source code present inside this folder
@@ -33,6 +38,15 @@ Folder Structure:
 - src/index.js
    - starting point for the application
    - Render the App component to the root element in index.html
+   - Below code inject the App component to 'root' element in index.html.
+   - App component will be coming from App.js
+
+   const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(
+      <React.StrictMode>
+         <App />
+      </React.StrictMode>
+    );
 
 - src/App.js
    - Root component
@@ -47,14 +61,74 @@ Folder Structure:
 Components:
 =============
 
-  - component is core of react.
+  - Component is core of react.
   - website made of react contain several component.
-  - Eg: in facebook page, like is one component, share is one component etc.,
+  - Eg: in facebook page, "Like" is one component, "share" is one component etc.,
   - Each component has separate logic and template.
+  - Components can be nested.
+  - Component code will be in .js file.
+  - Two types of Component:
+       - Stateless Functional Component 
+          - eg: JavaScript Function. 
+             function Welcome(props){
+               return <h1>Hello,{props.name}</h1>
+             }
+       - Stateful Class Component 
+          - Class extending Component Class. 
+          - Render method returning HTML
+          - class Welcome extends React.Component {
+            render(){
+               return <h1> Hello, {this.props.name} </h1>
+            }
+          }
 
+Functional Component:
+----------------------
+  - It take Properties(props) as input and run javascript function and give HTML(JSX) back.
+  - Refer Greet.js in first-project , which is example of functional component.
+  - It cannot maintain state.
+
+Class Component:
+-----------------
+  - Basically its ES6 class.
+  - Optional receives properties as input and return HTML(JSX) as output. 
+  - It maintain the state
+  - Refer Welcome.js in first-project, which is example of class component.
+
+
+Hooks:
+=========
+  - Hooks are the new feature that let you use state and other React feature without writing a class.
+  - Currently in React 16.4.0-alpha.
 
 JSX:
 =====
+   - JSX stands for JavaScriptXML - Extenstion to JavaScript language Syntax.
    - JSX allows to create HTML style template.
-   - in background , it converts all JSX to html
-   -
+   - Write XML like code for elements and components.
+   - in background ,it converts all JSX to pure JavaSCript.
+   - like XML, JSX tags will have tagname, attributes, children.
+   - JSX is not necessity to write React application but it makes react code simpler and elegant.
+   - eg: Hello.js in first-project is example of react with JSX
+
+Props:
+======
+   - Component can be re-used multiple times. 
+   - Props used to pass attributes to the Components. 
+   - Refer "GreetProps.js" in the first-project module for functional component.
+   - Refer "WelcomeProps.js" in the first-project module for Class component.
+   - Props are immutable.
+
+State:
+=======
+   - Props get passed to the component whereas state is managed within the component. 
+   - Variable declated in the function body. 
+   - State can be changed. 
+   - State can be accessed using:
+       - useState Hook - Functional Component
+       - this.state - Class Component
+   - Refer Message.js in the first-project module.
+   - Using State , we can change the value/state of the component. 
+   - In above example, initially it shows some text but after click the button same component shows different value. 
+
+
