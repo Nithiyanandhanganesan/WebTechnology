@@ -118,6 +118,7 @@ Props:
    - Refer "GreetProps.js" in the first-project module for functional component.
    - Refer "WelcomeProps.js" in the first-project module for Class component.
    - Props are immutable.
+   - Passsing method as props : refer ParentComponent.js & ChildComponent.js , greetParent method is passed as props to childComponent.js
 
 State:
 =======
@@ -130,5 +131,57 @@ State:
    - Refer Message.js in the first-project module.
    - Using State , we can change the value/state of the component. 
    - In above example, initially it shows some text but after click the button same component shows different value. 
+   - Refer Counter.js for how to setState . 
+   - Always make use of setState . Never modify the state directly. 
+   - If Code has to be executed after the state has been updated, then place that code in call back function which is second argument to the setState method.
+
+Event Handling:
+===============
+  - Refer FunctionClick.js in first-project for handling event in function component. 
+  - Refer ClassClick.js in first-project for handling event in Class component.
+
+Conditional Rendering:
+=======================
+  - Populate UI based on condition.
+  - Refer UserGreeting.js
+
+List & Keys:
+===========
+  - Refer NameList.js & Person.js
+  - <Person key={x.id} personProps={x}/> . here key is unique to each element in the array. Without key , we will see warning in the console "NameList.js:21 Warning: Each child in a list should have a unique "key" prop.
+  - key is not accessible in the child component.
+  - Key Prop is used internally to populate the list efficiently.
+  - If key is duplicated, we can see the warning in the console.
+  - If you dont have unique key, add index value which will generate unique value.
+
+Styling & CSS Basics:
+======================
+  - We can to Styling in React in below ways:
+      - CSS stylesheets
+      - Inline Styling
+      - CSS Modules 
+      - CSS in JS Libraries
+      - Refer Stylesheet.js, Inline.js , appStyles.css , appStyles.modules.css
+
+Form Handling:
+==============
+  - Refer Form.js
 
 
+LifeCycle Method:
+==================
+  - Its avaialble only in class component. not in functional component.
+  - Classify to 4 phases:
+     - Mounting : 
+           - When an instance of component is being created and inserted into the DOM
+           - constructor(), static getDerivedStateFromprops(), render() and componentDidMount()
+     - Updating : 
+           - When a component is being re-rendered as a result of changes to either its props or state.
+           - static getDerivedStateFromProps, shouldComponentUpdate, render, getSnapshotBeforeupdate, componentDidUpdate
+           
+     - Unmounting : 
+           - When a componet is being removed from the DOM
+           - componentWillUnmount
+     - Error Handling : 
+           - When there is an error during rendering , in a lifecycle method , or in the constructor of any child component. 
+           - static getDerivedStateFromError and componentDidCatch
